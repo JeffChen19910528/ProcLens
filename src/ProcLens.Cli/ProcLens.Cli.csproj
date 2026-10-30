@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProcLens.Core\ProcLens.Core.csproj" />
+    <ProjectReference Include="..\ProcLens.Application\ProcLens.Application.csproj" />
+    <ProjectReference Include="..\ProcLens.Infrastructure\ProcLens.Infrastructure.csproj" />
+    <ProjectReference Include="..\ProcLens.Platform.Windows\ProcLens.Platform.Windows.csproj" />
+    <ProjectReference Include="..\ProcLens.Platform.Linux\ProcLens.Platform.Linux.csproj" />
+    <ProjectReference Include="..\ProcLens.Platform.MacOS\ProcLens.Platform.MacOS.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.14" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.14" />
+    <PackageReference Include="System.CommandLine" Version="2.0.14" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\Catalogs\*.json" WithCulture="false" LogicalName="ProcLens.Cli.Localization.Catalogs.%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!-- The command is called "proclens" on every platform (the assembly stays ProcLens.Cli for the namespace). -->
+    <AssemblyName>proclens</AssemblyName>
+    <Version>1.0.0</Version>
+    <Product>ProcLens</Product>
+    <Description>Cross-platform process diagnostics toolkit.</Description>
+
+    <!-- System.CommandLine help and errors follow the chosen ProcLens language; only English and Traditional Chinese satellites are kept (smaller packages). -->
+    <SatelliteResourceLanguages>en;zh-Hant</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+</Project>

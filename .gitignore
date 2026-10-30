@@ -1,0 +1,11 @@
+bin/
+obj/
+artifacts/
+*.user
+.vs/
+
+# Claude Code development files
+CLAUDE.md
+SKILL.md
+.claude/
+.claude_recovery/
