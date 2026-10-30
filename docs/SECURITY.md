@@ -1,4 +1,5 @@
 # ProcLens security decisions
+**English** | [繁體中文](zh-TW/SECURITY.md)
 
 A review of these decisions, with the defects it found and fixed, is in `SECURITY_REVIEW.md`.
 

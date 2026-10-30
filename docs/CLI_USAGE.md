@@ -1,4 +1,5 @@
 # ProcLens command-line reference
+**English** | [繁體中文](zh-TW/CLI_USAGE.md)
 
 ```
 proclens <group> <command> [options]

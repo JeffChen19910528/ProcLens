@@ -1,4 +1,5 @@
 # Platform support
+**English** | [繁體中文](zh-TW/PLATFORM_SUPPORT.md)
 
 ProcLens detects the operating system at start-up and only offers what that platform really implements. A feature is
 never listed as available where it is not; `proclens system capabilities` always tells you the truth for the machine it

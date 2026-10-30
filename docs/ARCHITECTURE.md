@@ -1,4 +1,5 @@
 # Architecture
+**English** | [繁體中文](zh-TW/ARCHITECTURE.md)
 
 ProcLens is a .NET 10 command-line toolkit. It follows Clean Architecture with one rule that shapes everything:
 **everything specific to an operating system lives behind an interface in its own project, and the core knows
@@ -81,6 +82,7 @@ CLI  dump create
          5  wait on the single DbgHelp gate
          6  re-verify identity from the handle (start time)
          7  create the file private + new → MiniDumpWriteDump via IMiniDumpWriter
+     └─ DumpFinalizer (Core, the same on every platform)
          8  verify: non-empty, minidump structure, DbgHelp can read it
          9  encrypt (chunked AES-GCM), decrypt again and compare, wipe the plaintext
         10  hash, write metadata

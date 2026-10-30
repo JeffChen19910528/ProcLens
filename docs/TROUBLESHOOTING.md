@@ -1,4 +1,5 @@
 # Troubleshooting
+**English** | [繁體中文](zh-TW/TROUBLESHOOTING.md)
 
 Find your message (or the symptom) in the tables below. Exit codes are listed in `CLI_USAGE.md`. Nothing here asks you to
 weaken a protection: where ProcLens refuses, the fix is to satisfy the condition it names, not to bypass it.

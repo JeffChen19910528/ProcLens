@@ -1,4 +1,5 @@
 # Security review
+**English** | [繁體中文](zh-TW/SECURITY_REVIEW.md)
 
 **What this is:** a structured review of ProcLens 1.0.0 by its developer (with an AI assistant). It found real defects,
 all fixed and covered by regression tests. **It is not an independent audit or a penetration test**, and its coverage

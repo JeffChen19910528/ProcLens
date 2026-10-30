@@ -83,7 +83,7 @@ proclens config show                               # 顯示目前語言及其來
 優先順序：`--lang` → `PROCLENS_LANG` → 已儲存的設定 → 英文。作業系統的語言刻意不列入考量。
 `--json` 輸出、報告 JSON、稽核記錄、傾印中繼資料與結束代碼永遠不會被翻譯。
 
-若終端機顯示亂碼，請參閱 `docs/TROUBLESHOOTING.md` 的「Display language」一節。
+若終端機顯示亂碼，請參閱 `docs/zh-TW/TROUBLESHOOTING.md` 的「顯示語言」一節。
 
 ## 結束代碼
 
@@ -111,7 +111,6 @@ tests/  docs/  deploy/  tools/perf/
 
 ## 文件
 
-`docs/ARCHITECTURE.md`（架構）· `docs/CLI_USAGE.md`（完整指令參考）· `docs/PLATFORM_SUPPORT.md` · `docs/SECURITY.md` ·
-`docs/SECURITY_REVIEW.md` · `docs/DUMP_FORMAT.md` · `docs/TROUBLESHOOTING.md` · `deploy/README.md`
+`docs/zh-TW/ARCHITECTURE.md`（架構）· `docs/zh-TW/CLI_USAGE.md`（完整指令參考）· `docs/zh-TW/PLATFORM_SUPPORT.md` · `docs/zh-TW/SECURITY.md` ·
+`docs/zh-TW/SECURITY_REVIEW.md` · `docs/zh-TW/DUMP_FORMAT.md` · `docs/zh-TW/TROUBLESHOOTING.md` · `deploy/README.md`（英文）
 
-上述文件目前為英文版。
