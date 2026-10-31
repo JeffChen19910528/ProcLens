@@ -13,6 +13,9 @@ public sealed class MacOSProcessProvider : IPlatformProcessProvider
     private const string ModulesUnsupported =
         "Loaded modules are not exposed by managed APIs on macOS; native dyld enumeration is not implemented.";
 
+    // Process.PrivateMemorySize64 and Process.PeakWorkingSet64 do not throw on macOS; they silently return 0.
+    private const string NotAvailableOnMacOS = "Not available on macOS.";
+
     public IReadOnlyList<CapabilityInfo> GetCapabilities() => CapabilityDefaults.InspectionAndMonitoring(ModulesUnsupported);
 
     public Task<InspectionResult<ModuleInfo>> GetModulesAsync(int processId, CancellationToken ct = default) =>
@@ -83,9 +86,9 @@ public sealed class MacOSProcessProvider : IPlatformProcessProvider
                 using var process = Process.GetProcessById(processId);
                 return new MemoryStats(
                     Read(() => process.WorkingSet64),
-                    Read(() => process.PrivateMemorySize64),
+                    Measurement<long>.Unavailable(NotAvailableOnMacOS),
                     Read(() => process.VirtualMemorySize64),
-                    Read(() => process.PeakWorkingSet64));
+                    Measurement<long>.Unavailable(NotAvailableOnMacOS));
             }
             catch (ArgumentException)
             {

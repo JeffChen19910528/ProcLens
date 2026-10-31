@@ -29,28 +29,29 @@ internal abstract class InspectionCommand<T>(string name, string description, IC
 
         command.SetAction(async (parse, ct) =>
         {
+            InspectionResult<T> result;
             try
             {
-                var result = await FetchAsync(parse.GetValue(pid), ct);
-                if (parse.GetValue(json))
-                {
-                    console.Line(JsonSerializer.Serialize(result, Display.Json));
-                    return ExitCodes.For(result.Status);
-                }
-                if (result.Status != InspectionStatus.Available)
-                {
-                    console.ErrorLine(Describe(result.Status, result.Reason));
-                    return ExitCodes.For(result.Status);
-                }
-
-                PrintTable(result.Items);
-                return ExitCodes.Success;
+                result = await FetchAsync(parse.GetValue(pid), ct);
             }
             catch (FeatureUnavailableException e)
             {
-                console.ErrorLine(console.Localize(e.Message));
-                return ExitCodes.NotSupported;
+                result = InspectionResult<T>.NotSupported(e.Reason ?? e.Message);
             }
+
+            if (parse.GetValue(json))
+            {
+                console.Line(JsonSerializer.Serialize(result, Display.Json));
+                return ExitCodes.For(result.Status);
+            }
+            if (result.Status != InspectionStatus.Available)
+            {
+                console.ErrorLine(Describe(result.Status, result.Reason));
+                return ExitCodes.For(result.Status);
+            }
+
+            PrintTable(result.Items);
+            return ExitCodes.Success;
         });
         return command;
     }

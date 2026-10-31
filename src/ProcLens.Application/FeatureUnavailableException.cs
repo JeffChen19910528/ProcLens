@@ -7,4 +7,5 @@ public sealed class FeatureUnavailableException(Capability capability, string? r
     : Exception($"{capability} is not available: {reason ?? "no reason given"}")
 {
     public Capability Capability { get; } = capability;
+    public string? Reason { get; } = reason;
 }

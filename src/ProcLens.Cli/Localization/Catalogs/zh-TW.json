@@ -54,6 +54,7 @@
   "Not supported on this platform: {0}": "此平台不支援：{0}",
   "Architecture mismatch: {0}": "架構不相符：{0}",
   "Access denied: {0}": "存取被拒：{0}",
+  "{0} is not available: {1}": "{0} 無法使用：{1}",
 
   "Show operating system and runtime information.": "顯示作業系統與執行階段資訊。",
   "Show which features this platform supports.": "顯示此平台支援哪些功能。",
@@ -352,6 +353,7 @@
   "Reading /proc/<pid>/maps requires ptrace-read permission on the target process.": "讀取 /proc/<pid>/maps 需要對目標處理程序具有 ptrace 讀取權限。",
   "Reading /proc/<pid>/maps was refused.": "讀取 /proc/<pid>/maps 被拒絕。",
   "Not available on Linux.": "Linux 上無法取得。",
+  "Not available on macOS.": "macOS 上無法取得。",
   "VmRSS not reported (kernel thread or access denied).": "未回報 VmRSS（核心執行緒或存取被拒）。",
   "Threads not reported.": "未回報執行緒數。",
   "Loaded modules are not exposed by managed APIs on macOS; native dyld enumeration is not implemented.": "macOS 的受控 API 不提供已載入模組；尚未實作原生 dyld 列舉。",
